@@ -32,22 +32,6 @@ A retrieval-augmented generation (RAG) question-answering pipeline combining Pys
 
 The strongest configuration used the short-answer prompt with `k = 2`, suggesting that additional retrieved context introduced noise for this setup.
 
-## Recommended Repository Structure
-
-```text
-.
-├── rag_prompt_optimization.ipynb
-├── README.md
-├── requirements.txt
-├── .gitignore
-├── data/
-│   └── README.md
-├── results/
-└── figures/
-```
-
-Do not commit the Wikipedia Lucene index, model weights, Hugging Face cache, datasets without permission, or private access tokens.
-
 ## Setup
 
 Python 3.10 or 3.11 is recommended.
@@ -107,16 +91,6 @@ jupyter lab rag_prompt_optimization.ipynb
 
 Run all cells from top to bottom. Reduce the subset size for a quick smoke test before running all 200 examples.
 
-## Cleanup Before Publishing
-
-- Remove embedded Hugging Face tokens and revoke exposed tokens
-- Replace absolute Purdue paths with environment variables or relative paths
-- Delete duplicate definitions of `retrieve_context` and `build_prompt`
-- Clear notebook outputs before committing
-- Add checks for missing data, indexes, GPUs, and model access
-- Save summary results as CSV or JSON
-- Document the hardware and software versions used
-
 ## Technologies
 
 Python, PyTorch, Hugging Face Transformers, Pyserini, Apache Lucene, Llama 3.1, HotpotQA, Jupyter, Matplotlib
@@ -124,6 +98,10 @@ Python, PyTorch, Hugging Face Transformers, Pyserini, Apache Lucene, Llama 3.1, 
 ## Limitations
 
 The experiments use a 200-example development subset and one model, so the results are exploratory rather than a general RAG benchmark.
+
+# Documentation
+
+A detailed technical report describing the methodology, experiments, and evaluation can be found [RAG_Documentation](/RAG_Documentation.pdf).
 
 ## Author
 
